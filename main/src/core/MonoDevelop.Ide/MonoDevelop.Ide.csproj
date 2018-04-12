@@ -9647,6 +9647,9 @@
     <Compile Include="Gui\MonoDevelop.Ide.Projects.SelectReferenceDialog.cs" />
     <Compile Include="Gui\MonoDevelop.Ide.SelectEncodingsDialog.cs" />
     <Compile Include="Gui\MonoDevelop.Ide.StandardHeader.StandardHeaderPolicyPanelWidget.cs" />
+    <Compile Include="MonoDevelop.Ide.TypeSystem\RoslynServices\MonoDevelopProjectCacheHostServiceFactory.cs" />
+    <Compile Include="MonoDevelop.Ide.TypeSystem\RoslynServices\MonoDevelopWorkspaceCacheService.cs" />
+    <Compile Include="MonoDevelop.Ide.TypeSystem\RoslynServices\MonoDevelopDocumentTrackingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Makefile.am" />
@@ -9694,6 +9697,7 @@
     <Folder Include="MonoDevelop.Ide.Editor.Highlighting\syntaxes\Markdown\" />
     <Folder Include="MonoDevelop.Ide.EditorConfig\" />
     <Folder Include="Gui\" />
+    <Folder Include="MonoDevelop.Ide.TypeSystem\RoslynServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gtkrc">
