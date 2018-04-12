@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using MonoDevelop.Core;
 using MonoDevelop.Ide.Editor.Highlighting;
 using MonoDevelop.Ide.Editor;
+using MonoDevelop.SourceEditor;
 
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Text;
@@ -141,10 +142,13 @@ namespace Microsoft.VisualStudio.Platform
                 int startLineIndex = this.textDocument.OffsetToLineNumber (args.ChangeSpan.Start);
                 int endLineIndex = this.textDocument.OffsetToLineNumber (args.ChangeSpan.End);
 
-                IEnumerable<IDocumentLine> documentLines = this.textDocument.GetLinesBetween (startLineIndex, endLineIndex);
-                foreach(IDocumentLine documentLine in documentLines)
+                for(int curLineIndex = startLineIndex; curLineIndex <= endLineIndex; curLineIndex++)
                 {
+                    IDocumentLine documentLine = this.textDocument.GetLine(curLineIndex);
                     handler(this, new LineEventArgs(documentLine));
+
+                    //var view = (this.textDocument as TextEditor).GetContent<SourceEditorView>();
+                    //view.TextEditor.TextViewMargin.RemoveCachedLine(curLineIndex);
                 }
             }
         }
